@@ -29,4 +29,16 @@ def salir():
     time.sleep(1)
     sys.exit(0)
     
+def eliminar_empleado():
+    os.system('clear')
+    c = input("Digite la cedula del Empleado ==> ") 
 
+    for i in range(len(list_empleados)):
+        if list_empleados[i].cedula == c:
+            list_empleados.pop(i) 
+
+def mostrar_empleado():
+    os.system('clear')
+    for empleado in list_empleados:
+            print(f"{empleado.nombre} - {empleado.direccion} - {empleado.telefono} - {empleado.cedula} - {empleado.sueldo}")
+    key=input("Presione cualquier tecla para continuar.")
