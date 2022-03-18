@@ -17,11 +17,27 @@ class Empleado(Persona):
         self.sueldo = sueldo
 
 
-def mostrar_empleado():
-    os.system('clear')
-    for empleado in list_empleados:
-            print(f"{empleado.nombre} - {empleado.direccion} - {empleado.telefono} - {empleado.cedula} - {empleado.sueldo}")
-    key=input("Presione cualquier tecla para continuar.")
+def adicionar_empleado():
+    s = 0
+    while (s == 0):
+        os.system('clear')
+        nombre = input("Digite el nombre del empleado ==> ")
+        direccion = input("Digite la direccion ==> ")
+        telefono = input("Digite el telefono ==> ")
+        cedula = input("Digite la cedula ==> ")
+        sueldo = input("Digite el sueldo ==> ")
+
+        emp = Empleado(nombre, direccion, telefono, cedula, sueldo)
+        list_empleados.append(emp)
+
+        print(""" 
+        
+        """)
+        opc = str(input("Desea agregar otro empleado? (s/n) ==> "))
+        if(opc == 's'):
+            s = 0
+        else: 
+            s = 1
 
 def salir():
     os.system('clear')
