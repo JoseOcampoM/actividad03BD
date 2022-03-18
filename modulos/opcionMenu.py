@@ -16,5 +16,17 @@ class Empleado(Persona):
         Persona.__init__(self, nombre, direccion, telefono, cedula)
         self.sueldo = sueldo
 
+
+def mostrar_empleado():
+    os.system('clear')
+    for empleado in list_empleados:
+            print(f"{empleado.nombre} - {empleado.direccion} - {empleado.telefono} - {empleado.cedula} - {empleado.sueldo}")
+    key=input("Presione cualquier tecla para continuar.")
+
+def salir():
+    os.system('clear')
+    print("Gracias por usar este servicio")
+    time.sleep(1)
+    sys.exit(0)
     
 
